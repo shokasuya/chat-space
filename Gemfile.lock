@@ -190,6 +190,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     sexp_processor (4.15.0)
+
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -239,7 +240,9 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+
   devise
+
   font-awesome-sass
   haml-rails (>= 1.0, <= 2.0.1)
   jbuilder (~> 2.7)
