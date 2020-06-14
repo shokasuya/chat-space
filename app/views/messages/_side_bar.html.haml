@@ -5,7 +5,7 @@
         = current_user.name
       .icon
         .icon__a
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('fa', 'edit')
         .icon__b
 
@@ -13,9 +13,10 @@
 
             = icon('fa', 'cog')
   .side-bar__group-list
-    .side-bar__group-list__box
-      .side-bar__group-list__box__name
-        tech-camp       
-      .side-bar__group-list__box__message
-        no-message
-
+    - current_user.groups.each do |group|
+      .side-bar__group-list__box
+        = link_to '#' do
+          .side-bar__group-list__box__name
+            = group.name
+          .side-bar__group-list__box__message
+            メッセージはまだありません
