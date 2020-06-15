@@ -2,29 +2,37 @@
   .chat-main__group-info
     .chat-main__group-info__group
       .chat-main__group-info__group__name
-        D
+        = @group.name
       .chat-main__group-info__group__member
        
         .chat-main__group-info__group__member__list
-          "member:"
+          member:
         .chat-main__group-info__group__member__name
-          kasuya
-    .chat-main__group-info__edit
-      Edit
-  .chat-main__message-list
-    .chat-main__message-list__box
-      .chat-main__message-list__box__mesagge-info
-        .chat-main__message-list__box__message-info__user-name
-        .chat-main__message-list__box__message-info__data
-      .chat-main__message-list__box__message
-        .chat-main__message-list__box__masagge__content
-  
-  .form
-    %form.new_text
-      .input-erea
-        %input{type:"text",class:"input-erea__text",placeholder:"type a message"}
-        %label{class:"input-erea__image"}
-          = icon("fas","image")
-          %input{type:"file",class:"input-erea__image__file"}
-      %input{type:"submit",class:"submit"}
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
 
+    .chat-main__group-info__edit
+      =link_to edit_group_path(@group) do
+        Edit
+
+  .chat-main__message-list
+    = render @messages
+  
+  -# .form
+  -#   %from_with.new_text
+  -#     .input-erea
+  -#       %input{type:"text",class:"input-erea__text",placeholder:"type a message"}
+  -#       %label{class:"input-erea__image"}
+  -#         = icon("fas","image")
+  -#         %input{type:"file",class:"input-erea__image__file"}
+  -#     %input{type:"submit",class:"submit"}
+
+  .form
+    = form_with model: [@group, @message], html: {class: "new_text"}, local: true do |f|
+      .input-erea
+        = f.text_field :content, class: 'input-erea__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-erea__image' do
+          = icon('far', 'image', class: 'input-erea__icon')
+          = f.file_field :image, class: 'input-erea__image__file'
+      = f.submit 'Send', class: 'input__submit' 
+  
