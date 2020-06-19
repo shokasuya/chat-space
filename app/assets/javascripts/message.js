@@ -54,31 +54,18 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      
       console.log(data)
       let html = buildHTML(data);
-      $('.MessageField').append(html);      
+      $('.chat-main__message-list').append(html);      
       $('form')[0].reset();
-      $('.MessageField').animate({ scrollTop: $('.MessageField')[0].scrollHeight});
+      $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
     })
-  //   .fail(function() {
-  //     alert("メッセージ送信に失敗しました");
-  // });
-  .fail(function() {
-    alert("メッセージ送信に失敗しました");
-});
+  
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+    })
+    .always(function() {
+      $('.input__submit').removeAttr('disabled');
+    });
   })
-
-
-
 });
-
-
-
-
-// $(function(){
-//   $(*****).on(*****, function(e){
-//     e.preventDefault()
-//     // console.logを用いてイベント発火しているか確認
-//   })
-// })
