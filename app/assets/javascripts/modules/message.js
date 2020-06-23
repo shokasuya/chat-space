@@ -1,6 +1,4 @@
 $(function(){
-  console.log("ok")
-
 //   let reloadMessages = function() {
 //     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
 //   let last_message_id = $('.chat-main__message-list__box:last').data("message-id");

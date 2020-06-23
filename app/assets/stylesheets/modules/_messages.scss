@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper{
   display: flex;
 }
@@ -15,7 +19,7 @@
     width: 300px;
     display: flex;
     align-items: center;
-    background-color: darkgray;
+    background-color:#253141;
     padding: 0 20px;
     &__box{
       width: 100vw;
@@ -23,16 +27,23 @@
       justify-content: space-between;
       &__test-user{
         font-size: 16px;
+        color: white;
       }
     }
     .icon{
       display: flex;
       width: 60px;
+      color: white;
       &__a{
-
+        a{
+          color: white;
+        }
       }
       &__b{
         margin-left: 5px;
+        a{
+          color: white;
+        }
       }
     }
   }
@@ -40,17 +51,22 @@
   &__group-list{
     height: calc(100% - 100px);
     width: 300px;
-    background-color: rgb(43, 157, 192);
+    background-color: #2f3e51;
     padding: 0 20px;
+    overflow: scroll;
     &__box{
       box-sizing: border-box;
       padding:20px 0 40px;
+      text-decoration: none;
       &__name{
         font-size: 15px;
         margin-bottom: 5px;
+        color: white;
       }
       &__message{
         font-size: 11px;
+        color: white;
+
       }
     }
 
@@ -64,8 +80,7 @@
   &__group-info{
     height: 100px;
     padding: 0 40px;
-    background-color: green;
-    border-bottom: solid 1px;
+    border-bottom: solid 1px #eee;
     display: flex;
     justify-content: space-between;
     &__group{
@@ -78,7 +93,7 @@
         font-size: 12px;
         margin-top: 15px;
         display: flex;
-        color:black;
+        color:#999;
         &__list{}
         &__name{
           font-size: 13px;
@@ -87,19 +102,23 @@
     }
     &__edit{
       display: block;
-      border: 1px solid black;
+      border: 1px solid #38AEF0;
       height: 40px;
       width: 72px;
       padding: 0 20px;
       margin-top: 28px;
       font-size: 16px;
       line-height: 40px;
+      text-decoration: none;
+      a{ 
+        color: #38AEF0;
+      }
     }
     
   }
   &__message-list{
     height: calc(100vh - 190px);
-    background-color:white;
+    background-color:#fafafa;
     box-sizing: border-box;
     padding: 35px 40px 0;
     overflow: scroll;
@@ -129,7 +148,7 @@
   .form{
     height: 90px;
     width:calc(100vw - 300px);
-    background-color: blue;
+    background-color: #dddddd;
     box-sizing: border-box;
     padding: 20px 50px 20px 40px;
     .new_text{
@@ -162,7 +181,8 @@
         font-size: 16px;
         padding: 0 30px;
         border: none;
-        background-color: burlywood;
+        background-color: #38AEF0;
+        color: white;
 
         
 
