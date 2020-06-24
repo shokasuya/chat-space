@@ -44,7 +44,7 @@ $(function(){
             <div class="chat-main__message-list__box__message-info__user-name">
               ${message.user_name}
             </div>
-            <div class="hat-main__message-list__box__message-info__data">
+            <div class="chat-main__message-list__box__message-info__data">
               ${message.created_at}
             </div>
           </div>
